@@ -29,3 +29,9 @@ https://www.youtube.com/playlist?list=PL-zOB4NIHubaG_W63xg0dJCfm3C6GJEIz
 ## Snowflake
 
 ## そしてこれから
+
+### Terraform
+
+### dbt Cloud
+
+### COMETA
