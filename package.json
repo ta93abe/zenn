@@ -11,12 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "remark": "^15.0.1",
-    "zenn-cli": "^0.1.153"
+    "zenn-cli": "^0.1.158"
   },
   "volta": {
-    "node": "20.12.2"
+    "node": "22.12.0"
   },
-  "packageManager": "pnpm@9.0.6+sha512.f6d863130973207cb7a336d6b439a242a26ac8068077df530d6a86069419853dc1ffe64029ec594a9c505a3a410d19643c870aba6776330f5cfddcf10a9c1617",
+  "packageManager": "pnpm@10.0.0-beta.1+sha512.629de0531b9ae9a3f8e372d014ef8f5a57906d9a48095ced54bbfbd246b4136381478032c8d13819fd1eedde8330517a799ea6756eedd9a136e36524fa3083cf",
   "devDependencies": {
     "@biomejs/biome": "1.7.1"
   }
