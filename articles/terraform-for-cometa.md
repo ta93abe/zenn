@@ -3,12 +3,15 @@ title: 'COMETA の dbtメタデータ連携に必要なものを Terraform で�
 emoji: '🦁'
 type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['cometa', 'terraform', 'dbt']
-published: false
+published: true
 ---
+
+[TROCCO® Advent Calendar 2024](https://qiita.com/advent-calendar/2024/trocco) の 9 日目の記事です。
+これまでの記事もとても参考になりますし、これからの記事もタイトルだけ見て楽しみなものがたくさんあるので、購読してクリスマスまで一緒に駆け抜けましょう ! (シリーズ 2 はまだ空きがあるよ)
 
 ## はじめに
 
-ドキュメント、やってみたの記事があるので、それらにそっていけばやりたいことはできると思いますが、ここでは Terraform を使って COMETA に必要なリソースを作成する方法を紹介します。
+公式ドキュメントとやってみたの記事があるので、それらに沿っていけばやりたいことはできると思いますが、ここでは Terraform を使って COMETA に必要なリソースを作成する方法を紹介します。
 
 https://documents.trocco.io/cometa/docs/dbt-metadata-integration
 
@@ -33,11 +36,11 @@ output "cometa_dbt_artifacts_bucket_name" {
 S3 のバケット名はユニークなものにしましょう。
 output ブロックでバケット名を出力しておきます。COMETA の設定画面で使います。
 
-## IAM ロールを作成する
+## COMETA 用の IAM ロールを作成する
 
 COMETA が S3 バケットにアクセスするための IAM ロールを作成します。
 
-付与が必要な権限は `s3:GetObject` です。
+付与する権限は `s3:GetObject` です。
 
 ```hcl:main.tf
 
@@ -105,29 +108,29 @@ output "cometa_iam_role_name" {
 COMETA_AWS_ACCOUNT_ID は COMETA の設定画面で確認できます。
 
 output ブロックで ARN を出力しておきます。COMETA の設定画面で使います。
-外部 ID も COMETA 上で入力する必要があるので使えるようにしておいてください。
+外部 ID も COMETA 上で入力する必要があるので覚えておいてください。
 
 ---
 
-ここまでくれば COMETA に必要な情報は揃いました。
+これで COMETA に必要な情報は揃いました。以下の情報を COMETA の設定画面に入力します。
 
 - IAM ロール ARN
 - 外部 ID
 - S3 バケット名 (バケット直下にファイルを置くのでパスプレフィックスは空にしておきます。)
 
-ここからは余興です。S3 バケットに dbt artifacts が置ければどうやったっていいです。
+![](/images/cometa-dbt-integration-settings.png)
+_COMETA の設定画面_
 
 ## GitHub Actions 用の IAM ロールを作成する
 
-S3 バケットに dbt artifacts を置く必要があります。ここでは GitHub Actions を使います。
+dbt のコードが GitHub にあるのであれば、GitHub Actions で dbt artifacts を S3 にアップロードするという選択肢がいいと思います。
+GitHub Actions のワークフローから S3 にファイルをアップロードするための IAM ロールを作成します。
 
 ```hcl:main.tf
-
 locals {
   owner = "<your-github-username>"
   repo = "<your-repo-name>"
 }
-
 
 resource "aws_iam_openid_connect_provider" "github_actions_provider" {
   url             = "https://token.actions.githubusercontent.com"
@@ -252,15 +255,15 @@ on:
 ```
 
 TROCCO ワークフローから GitHub Actions を動かすための Fine-grained tokens を作成します。
-**必要な権限は `contents:write` です。** これだけを設定して作成してください。
+**必要な権限は `contents:write` です。**
 
 TROCCO のワークフロー機能から HTTP リクエストのタスクを設定します。
 
 ![](/images/trocco-workflow-1.png)
 
-\$owner\$ と \$repo\$ は変数になっています。自分のものに変更してください。
+URL に含まれている \$owner\$ と \$repo\$ は変数になっています。自分のものに変更してください。
 
-HTTP リクエストボディは GitHub Actions の repository_dispatch の types で指定したものと一致している必要があります。
+HTTP リクエストボディは GitHub Actions の repository_dispatch の types で指定したものと一致している必要があります。今回は上で指定した trocco です。
 
 ```json
 {
@@ -282,15 +285,13 @@ _ワークフローの図_
 
 ## おわりに
 
-COMETA に必要なリソースを Terraform で作成する方法(あとその他余興)を紹介しました。
+COMETA の dbt 連携に必要なリソースを Terraform で作成する方法を紹介しました。
 
 自分自身が Snowflake のリソースを Terraform に載せている最中、ちょうど COMETA の dbt 連携ができるようになりました。
 ついでにというテンションで COMETA 用の AWS リソースを作成してみるのは Terraform 初心者の自分にとってはいい練習でした。
 
-コンソールから作ろうが、コードから作ろうがどちらでもいいのですが、
+これくらいであれば AWS マネジメントコンソールから作ってもいいのですが、Terraform で作成しておくと環境を再現する際に便利です。
 
 ---
 
 いかかでしたでしょうか。おしまい。
-
-Zenn にも COMETA のアイコンほしいな〜
