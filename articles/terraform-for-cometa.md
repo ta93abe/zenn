@@ -272,11 +272,12 @@ HTTP リクエストボディは GitHub Actions の repository_dispatch の type
 ```
 
 ![](/images/trocco-workflow-2.png)
-| キー | 値 |
-| --- | --- |
-| Accept | application/vnd.github+json |
+
+| キー          | 値                          |
+| ------------- | --------------------------- |
+| Accept        | application/vnd.github+json |
 | Authorization | Bearer <fine-grained token> |
-| Content-Type | application/json |
+| Content-Type  | application/json            |
 
 ![](/images/trocco-workflow-3.png)
 _ワークフローの図_
