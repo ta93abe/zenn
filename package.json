@@ -14,10 +14,15 @@
     "zenn-cli": "^0.1.158"
   },
   "volta": {
-    "node": "22.12.0"
+    "node": "22.14.0"
   },
-  "packageManager": "pnpm@10.0.0-beta.1+sha512.629de0531b9ae9a3f8e372d014ef8f5a57906d9a48095ced54bbfbd246b4136381478032c8d13819fd1eedde8330517a799ea6756eedd9a136e36524fa3083cf",
+  "packageManager": "pnpm@10.6.3",
   "devDependencies": {
-    "@biomejs/biome": "1.7.1"
+    "@biomejs/biome": "1.9.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@biomejs/biome"
+    ]
   }
 }
