@@ -1,13 +1,12 @@
 ---
 title: 'COMETA の dbtメタデータ連携に必要なものを Terraform でそろえる'
-emoji: '🦁'
+emoji: '📄'
 type: 'tech' # tech: 技術記事 / idea: アイデア
 topics: ['cometa', 'terraform', 'dbt']
 published: true
 ---
 
 [TROCCO® Advent Calendar 2024](https://qiita.com/advent-calendar/2024/trocco) の 9 日目の記事です。
-これまでの記事もとても参考になりますし、これからの記事もタイトルだけ見て楽しみなものがたくさんあるので、購読してクリスマスまで一緒に駆け抜けましょう ! (シリーズ 2 はまだ空きがあるよ)
 
 ## はじめに
 
