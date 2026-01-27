@@ -1,0 +1,34 @@
+{
+  "filters": {
+    "comments": true
+  },
+  "rules": {
+    "preset-ja-technical-writing": {
+      "no-exclamation-question-mark": {
+        "allowFullWidthExclamation": true,
+        "allowFullWidthQuestion": true
+      },
+      "no-doubled-joshi": {
+        "strict": false,
+        "allow": ["か", "にも"]
+      },
+      "ja-no-mixed-period": {
+        "allowPeriodMarks": [":", "："]
+      },
+      "ja-no-weak-phrase": false,
+      "sentence-length": {
+        "max": 150
+      }
+    },
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "always",
+        "exceptPunctuation": true
+      },
+      "ja-space-around-code": {
+        "before": true,
+        "after": true
+      }
+    }
+  }
+}
