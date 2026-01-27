@@ -1,0 +1,53 @@
+{
+  "version": "0.2",
+  "language": "en,ja",
+  "ignorePaths": [
+    "node_modules/**",
+    ".git/**",
+    "pnpm-lock.yaml",
+    "package-lock.json"
+  ],
+  "words": [
+    "Zenn",
+    "COMETA",
+    "TROCCO",
+    "Cloudflare",
+    "Terraform",
+    "biome",
+    "biomejs",
+    "textlint",
+    "cspell",
+    "WSL2",
+    "Volta",
+    "pnpm",
+    "npx",
+    "frontmatter",
+    "Unwatch",
+    "githubactions",
+    "jsonencode"
+  ],
+  "flagWords": [],
+  "ignoreWords": [],
+  "patterns": [
+    {
+      "name": "markdown-link",
+      "pattern": "\\[.*?\\]\\(.*?\\)",
+      "description": "Ignore markdown links"
+    },
+    {
+      "name": "code-block",
+      "pattern": "```[\\s\\S]*?```",
+      "description": "Ignore code blocks"
+    },
+    {
+      "name": "inline-code",
+      "pattern": "`[^`]+`",
+      "description": "Ignore inline code"
+    }
+  ],
+  "ignoreRegExpList": [
+    "markdown-link",
+    "code-block",
+    "inline-code"
+  ]
+}

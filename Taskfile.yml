@@ -1,0 +1,82 @@
+version: '3'
+
+vars:
+  ARTICLES_PATTERN: "articles/**/*.md"
+
+tasks:
+  # プレビューサーバーを起動
+  preview:
+    desc: Zennプレビューサーバーを起動
+    cmd: npx zenn preview
+
+  # 新規記事を作成
+  new:article:
+    desc: 新しい記事を作成
+    cmd: npx zenn new:article
+
+  # 新規書籍を作成
+  new:book:
+    desc: 新しい書籍を作成
+    cmd: npx zenn new:book
+
+  # 記事一覧を表示
+  list:articles:
+    desc: 記事一覧を表示
+    cmd: npx zenn list:articles
+
+  # 書籍一覧を表示
+  list:books:
+    desc: 書籍一覧を表示
+    cmd: npx zenn list:books
+
+  # すべてのリンターを実行
+  lint:
+    desc: すべてのリンターを実行（Biome, textlint, cspell）
+    cmd: pnpm run lint
+
+  # textlintのみを実行
+  lint:text:
+    desc: textlintで日本語校正をチェック
+    cmd: pnpm run lint:text
+
+  # textlintで自動修正
+  lint:text:fix:
+    desc: textlintで自動修正可能なエラーを修正
+    cmd: npx textlint --fix {{.ARTICLES_PATTERN}}
+
+  # cspellのみを実行
+  lint:spell:
+    desc: cspellでスペルチェック
+    cmd: pnpm run lint:spell
+
+  # Biomeでフォーマット
+  format:
+    desc: Biomeでコードをフォーマット
+    cmd: pnpm run format
+
+  # Biomeでチェック
+  check:
+    desc: Biomeでコードをチェック
+    cmd: npx biome check
+
+  # Biomeでチェックと自動修正
+  check:fix:
+    desc: Biomeでチェックと自動修正
+    cmd: npx biome check --write
+
+  # 依存関係をインストール
+  install:
+    desc: 依存関係をインストール
+    cmd: pnpm install
+
+  # すべてのチェックを実行（CI用）
+  ci:
+    desc: すべてのチェックを実行（CI用）
+    deps: [check, lint:text, lint:spell]
+    cmd: echo "すべてのチェックが完了しました"
+
+  # ヘルプを表示
+  default:
+    desc: 利用可能なタスクを表示
+    cmd: task --list
+    silent: true
