@@ -1,12 +1,7 @@
 {
 	"version": "0.2",
 	"language": "en,ja",
-	"ignorePaths": [
-		"node_modules/**",
-		".git/**",
-		"pnpm-lock.yaml",
-		"package-lock.json"
-	],
+	"ignorePaths": ["node_modules/**", ".git/**", "pnpm-lock.yaml", "package-lock.json"],
 	"words": [
 		"Zenn",
 		"COMETA",
@@ -15,10 +10,12 @@
 		"Terraform",
 		"biome",
 		"biomejs",
+		"oxc",
+		"oxfmt",
+		"oxlint",
 		"textlint",
 		"cspell",
 		"WSL2",
-		"Volta",
 		"pnpm",
 		"npx",
 		"frontmatter",

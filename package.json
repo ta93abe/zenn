@@ -5,10 +5,11 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"lint": "biome check && textlint \"articles/**/*.md\" && cspell \"articles/**/*.md\"",
+		"lint": "oxlint --no-error-on-unmatched-pattern && oxfmt --check && textlint \"articles/**/*.md\" && cspell \"articles/**/*.md\"",
+		"lint:ox": "oxlint --no-error-on-unmatched-pattern",
 		"lint:text": "textlint \"articles/**/*.md\"",
 		"lint:spell": "cspell \"articles/**/*.md\"",
-		"format": "biome format --write"
+		"format": "oxfmt"
 	},
 	"keywords": [],
 	"author": "",
@@ -17,13 +18,11 @@
 		"remark": "^15.0.1",
 		"zenn-cli": "^0.5.4"
 	},
-	"volta": {
-		"node": "24.11.1"
-	},
 	"packageManager": "pnpm@10.22.0",
 	"devDependencies": {
-		"@biomejs/biome": "2.5.13",
 		"cspell": "^10.3.1",
+		"oxfmt": "^0.67.0",
+		"oxlint": "^1.82.0",
 		"textlint": "^15.8.0",
 		"textlint-filter-rule-comments": "^1.3.0",
 		"textlint-rule-preset-ja-spacing": "^3.0.3",

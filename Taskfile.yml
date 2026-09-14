@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 vars:
   ARTICLES_PATTERN: "articles/**/*.md"
@@ -31,7 +31,7 @@ tasks:
 
   # すべてのリンターを実行
   lint:
-    desc: すべてのリンターを実行（Biome, textlint, cspell）
+    desc: すべてのリンターを実行（Oxlint, Oxfmt, textlint, cspell）
     cmd: pnpm run lint
 
   # textlintのみを実行
@@ -49,20 +49,24 @@ tasks:
     desc: cspellでスペルチェック
     cmd: pnpm run lint:spell
 
-  # Biomeでフォーマット
+  # Oxfmtでフォーマット
   format:
-    desc: Biomeでコードをフォーマット
+    desc: Oxfmtでコードをフォーマット
     cmd: pnpm run format
 
-  # Biomeでチェック
-  check:
-    desc: Biomeでコードをチェック
-    cmd: npx biome check
+  format:check:
+    desc: Oxfmtでフォーマットをチェック
+    cmd: pnpm exec oxfmt --check
 
-  # Biomeでチェックと自動修正
+  # Oxlintでチェック
+  check:
+    desc: Oxlintでコードをチェック
+    cmd: pnpm exec oxlint --no-error-on-unmatched-pattern
+
+  # OxlintとOxfmtで自動修正
   check:fix:
-    desc: Biomeでチェックと自動修正
-    cmd: npx biome check --write
+    desc: OxlintとOxfmtで自動修正
+    cmd: pnpm exec oxlint --fix --no-error-on-unmatched-pattern && pnpm exec oxfmt
 
   # 依存関係をインストール
   install:
@@ -72,7 +76,7 @@ tasks:
   # すべてのチェックを実行（CI用）
   ci:
     desc: すべてのチェックを実行（CI用）
-    deps: [check, lint:text, lint:spell]
+    deps: [check, format:check, lint:text, lint:spell]
     cmd: echo "すべてのチェックが完了しました"
 
   # ヘルプを表示

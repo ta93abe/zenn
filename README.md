@@ -6,7 +6,7 @@
 
 ### 必要な環境
 
-- Node.js 24.11.1（Voltaで管理）
+- Node.js
 - pnpm 10.22.0
 - go-task（推奨）
 
@@ -64,7 +64,7 @@ pnpm run format
 
 ### Linter/校正ツール
 
-- **Biome**: JavaScriptのフォーマッター/リンター
+- **Oxlint / Oxfmt**: JavaScript/TypeScriptのリンターとフォーマッター
 - **textlint**: 日本語校正ツール
   - preset-ja-technical-writing: 技術文書向けルール
   - preset-ja-spacing: スペース関連のルール
@@ -76,4 +76,4 @@ pnpm run format
 
 ## 参考リンク
 
-* [📘 Zenn CLI Guide](https://zenn.dev/zenn/articles/zenn-cli-guide)
+- [📘 Zenn CLI Guide](https://zenn.dev/zenn/articles/zenn-cli-guide)

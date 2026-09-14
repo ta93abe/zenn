@@ -10,8 +10,8 @@
 		// cspell
 		"streetsidesoftware.code-spell-checker",
 
-		// Biome
-		"biomejs.biome",
+		// Oxc (Oxlint / Oxfmt)
+		"oxc.oxc-vscode",
 
 		// Zenn
 		"negokaz.zenn-editor",
