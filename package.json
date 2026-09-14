@@ -4,12 +4,18 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"preview": "zenn preview",
+		"new:article": "zenn new:article",
+		"new:book": "zenn new:book",
+		"list:articles": "zenn list:articles",
+		"list:books": "zenn list:books",
 		"lint": "oxlint --no-error-on-unmatched-pattern && oxfmt --check && textlint \"articles/**/*.md\" && cspell \"articles/**/*.md\"",
 		"lint:ox": "oxlint --no-error-on-unmatched-pattern",
 		"lint:text": "textlint \"articles/**/*.md\"",
+		"lint:text:fix": "textlint --fix \"articles/**/*.md\"",
 		"lint:spell": "cspell \"articles/**/*.md\"",
-		"format": "oxfmt"
+		"format": "oxfmt",
+		"format:check": "oxfmt --check"
 	},
 	"keywords": [],
 	"author": "",

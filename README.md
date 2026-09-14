@@ -8,56 +8,30 @@
 
 - Node.js
 - pnpm 10.22.0
-- go-task（推奨）
 
 ### インストール
 
 ```bash
-# 依存関係のインストール
 pnpm install
-
-# go-taskのインストール（macOS）
-brew install go-task
 ```
 
 ## 使い方
 
-### go-taskを使用する場合（推奨）
-
 ```bash
-# 利用可能なタスクを表示
-task
-
 # プレビューサーバーを起動
-task preview
+pnpm preview
 
 # 新規記事を作成
-task new:article
+pnpm new:article
 
 # リンターを実行
-task lint
+pnpm lint
 
 # textlintで自動修正
-task lint:text:fix
-
-# すべてのチェックを実行
-task ci
-```
-
-### 直接コマンドを使用する場合
-
-```bash
-# プレビューサーバーを起動
-npx zenn preview
-
-# 新規記事を作成
-npx zenn new:article
-
-# リンターを実行
-pnpm run lint
+pnpm lint:text:fix
 
 # フォーマット
-pnpm run format
+pnpm format
 ```
 
 ## 開発ツール
