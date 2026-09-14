@@ -1,45 +1,44 @@
 {
-  // エディタ設定
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "biomejs.biome",
-  "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit",
-    "quickfix.biome": "explicit"
-  },
+	// エディタ設定
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit"
+	},
 
-  // Markdown設定
-  "[markdown]": {
-    "editor.defaultFormatter": null,
-    "editor.formatOnSave": false,
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": {
-      "comments": "on",
-      "strings": "on",
-      "other": "on"
-    }
-  },
+	// Markdown設定
+	"[markdown]": {
+		"editor.defaultFormatter": null,
+		"editor.formatOnSave": false,
+		"editor.wordWrap": "on",
+		"editor.quickSuggestions": {
+			"comments": "on",
+			"strings": "on",
+			"other": "on"
+		}
+	},
 
-  // ファイル設定
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
-  "files.exclude": {
-    "**/node_modules": true,
-    "**/.git": true,
-    "**/pnpm-lock.yaml": true
-  },
+	// ファイル設定
+	"files.insertFinalNewline": true,
+	"files.trimTrailingWhitespace": true,
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/.git": true,
+		"**/pnpm-lock.yaml": true
+	},
 
-  // textlint設定
-  "textlint.autoFixOnSave": false,
-  "textlint.languages": ["markdown"],
+	// textlint設定
+	"textlint.autoFixOnSave": false,
+	"textlint.languages": ["markdown"],
 
-  // cspell設定
-  "cSpell.enabled": true,
-  "cSpell.language": "en,ja",
-  "cSpell.words": ["COMETA", "jsonencode", "TROCCO"],
+	// cspell設定
+	"cSpell.enabled": true,
+	"cSpell.language": "en,ja",
+	"cSpell.words": ["COMETA", "jsonencode", "TROCCO"],
 
-  // Biome設定
-  "biome.enabled": true,
+	// Biome設定
+	"biome.enabled": true,
 
-  // Zenn Editor設定
-  "zenn.previewUrl": "http://localhost:8000"
+	// Zenn Editor設定
+	"zenn.previewUrl": "http://localhost:8000"
 }

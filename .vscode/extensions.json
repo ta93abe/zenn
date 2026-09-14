@@ -1,24 +1,24 @@
 {
-  "recommendations": [
-    // Markdown関連
-    "yzhang.markdown-all-in-one",
-    "DavidAnson.vscode-markdownlint",
+	"recommendations": [
+		// Markdown関連
+		"yzhang.markdown-all-in-one",
+		"DavidAnson.vscode-markdownlint",
 
-    // textlint
-    "taichi.vscode-textlint",
+		// textlint
+		"taichi.vscode-textlint",
 
-    // cspell
-    "streetsidesoftware.code-spell-checker",
+		// cspell
+		"streetsidesoftware.code-spell-checker",
 
-    // Biome
-    "biomejs.biome",
+		// Biome
+		"biomejs.biome",
 
-    // Zenn
-    "negokaz.zenn-editor",
+		// Zenn
+		"negokaz.zenn-editor",
 
-    // その他便利な拡張機能
-    "shardulm94.trailing-spaces",
-    "mosapride.zenkaku",
-    "oderwat.indent-rainbow"
-  ]
+		// その他便利な拡張機能
+		"shardulm94.trailing-spaces",
+		"mosapride.zenkaku",
+		"oderwat.indent-rainbow"
+	]
 }

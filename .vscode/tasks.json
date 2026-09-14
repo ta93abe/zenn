@@ -1,93 +1,93 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Zenn Preview",
-      "type": "shell",
-      "command": "npx zenn preview",
-      "isBackground": true,
-      "problemMatcher": {
-        "pattern": {
-          "regexp": "^$",
-          "file": 1,
-          "location": 2,
-          "message": 3
-        },
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": "^.*Starting.*$",
-          "endsPattern": "^.*started.*$"
-        }
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated"
-      },
-      "runOptions": {
-        "runOn": "folderOpen"
-      }
-    },
-    {
-      "label": "Lint All",
-      "type": "shell",
-      "command": "pnpm run lint",
-      "group": {
-        "kind": "test",
-        "isDefault": true
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "Lint Text",
-      "type": "shell",
-      "command": "pnpm run lint:text",
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "Lint Text Fix",
-      "type": "shell",
-      "command": "npx textlint --fix \"articles/**/*.md\"",
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "Lint Spell",
-      "type": "shell",
-      "command": "pnpm run lint:spell",
-      "group": "test",
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "Format",
-      "type": "shell",
-      "command": "pnpm run format",
-      "group": "build",
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "New Article",
-      "type": "shell",
-      "command": "npx zenn new:article",
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared"
-      }
-    }
-  ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Zenn Preview",
+			"type": "shell",
+			"command": "npx zenn preview",
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": {
+					"regexp": "^$",
+					"file": 1,
+					"location": 2,
+					"message": 3
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "^.*Starting.*$",
+					"endsPattern": "^.*started.*$"
+				}
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		},
+		{
+			"label": "Lint All",
+			"type": "shell",
+			"command": "pnpm run lint",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "Lint Text",
+			"type": "shell",
+			"command": "pnpm run lint:text",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "Lint Text Fix",
+			"type": "shell",
+			"command": "npx textlint --fix \"articles/**/*.md\"",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "Lint Spell",
+			"type": "shell",
+			"command": "pnpm run lint:spell",
+			"group": "test",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "Format",
+			"type": "shell",
+			"command": "pnpm run format",
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "New Article",
+			"type": "shell",
+			"command": "npx zenn new:article",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		}
+	]
 }
